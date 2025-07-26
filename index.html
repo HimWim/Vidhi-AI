@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidhi AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900 text-white antialiased">
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
+      <!-- Header -->
+      <header class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl font-bold text-blue-400">Vidhi AI</h1>
+        <p class="mt-2 text-lg text-gray-400">
+          Your partner in drafting accurate First Information Reports (FIR)
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <!-- Input Section -->
+        <div
+          class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700"
+        >
+          <label
+            for="incident-description"
+            class="block text-lg font-semibold mb-3 text-gray-200"
+          >
+            Describe the Incident
+          </label>
+          <p class="text-sm text-gray-400 mb-4">
+            Enter the complainant's account of the incident in detail. The more
+            specific the information, the more accurate the AI's suggestions
+            will be.
+          </p>
+          <textarea
+            id="incident-description"
+            rows="10"
+            class="w-full p-4 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 text-gray-200 placeholder-gray-500"
+            placeholder="For example: 'On July 25th, at approximately 10 PM, the complainant reported that two individuals forcibly entered his shop, threatened him with a knife, and stole cash from the register...'"
+          ></textarea>
+          <div class="mt-5 text-center">
+            <button
+              id="analyze-button"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              Analyze Incident
+            </button>
+          </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loader" class="hidden text-center my-8">
+          <div
+            role="status"
+            class="inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-blue-400 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          >
+            <span
+              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+              >Loading...</span
+            >
+          </div>
+          <p class="mt-3 text-gray-400">
+            Analyzing legal precedents and statutes... Please wait.
+          </p>
+        </div>
+
+        <!-- Error Message Box -->
+        <div
+          id="error-box"
+          class="hidden my-6 p-4 bg-red-900/50 border border-red-700 rounded-lg text-red-300 text-center"
+        >
+          <p id="error-message"></p>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="hidden mt-10">
+          <div id="summary-card" class="card prose-custom">
+            <h3
+              class="text-xl font-semibold border-b border-gray-700 pb-2 mb-4"
+            >
+              AI-Generated Summary of Incident
+            </h3>
+            <p id="summary-output"></p>
+          </div>
+
+          <h2 class="text-2xl font-bold text-center my-6 text-blue-300">
+            Analysis & Recommendations
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Suggested Sections -->
+            <div>
+              <h3 class="text-xl font-semibold mb-4 text-center">
+                Suggested Sections & Acts
+              </h3>
+              <div id="sections-output" class="space-y-4"></div>
+            </div>
+
+            <!-- Landmark Judgements -->
+            <div>
+              <h3 class="text-xl font-semibold mb-4 text-center">
+                Relevant Landmark Judgements
+              </h3>
+              <div id="judgements-output" class="space-y-4"></div>
+            </div>
+          </div>
+          <div class="mt-8 text-center text-xs text-gray-500">
+            <p>
+              <strong>Disclaimer:</strong> This tool is for informational
+              purposes only and does not constitute legal advice. The suggested
+              sections are based on AI analysis and should be verified by a
+              qualified legal professional. The final decision rests with the
+              Investigating Officer.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

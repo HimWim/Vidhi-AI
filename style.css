@@ -1,0 +1,50 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.prose-custom {
+    color: #d1d5db; /* gray-300 */
+}
+
+.prose-custom h3 {
+    color: #ffffff;
+}
+
+.prose-custom p {
+    margin-bottom: 0.5rem;
+}
+
+.prose-custom strong {
+    color: #93c5fd; /* blue-300 */
+}
+
+.card {
+    background-color: #1f2937; /* gray-800 */
+    border: 1px solid #374151; /* gray-700 */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #4b5563; /* gray-600 */
+}
+
+/* Custom scrollbar for better aesthetics in dark mode */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937; /* gray-800 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563; /* gray-600 */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280; /* gray-500 */
+}
