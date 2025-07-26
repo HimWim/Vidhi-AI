@@ -2,7 +2,7 @@
 
 // Import required packages
 const express = require("express");
-const fetch = require("node-fetch"); // To make HTTP requests from the server
+// const fetch = require("node-fetch"); // To make HTTP requests from the server
 require("dotenv").config(); // To load environment variables from a .env file
 
 // Create an Express application
@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 3000; // Use port from environment or default t
 
 // Middleware to parse JSON bodies from incoming requests
 app.use(express.json());
-// Middleware to serve your static frontend files (HTML, CSS, JS)
+
+// Middleware to serve static frontend files (HTML, CSS, JS)
 app.use(express.static(".")); // Serves files from the root directory
 
 // --- The Secure API Endpoint ---
